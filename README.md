@@ -38,7 +38,7 @@ Once the pages are prepared in cache, browsing them is as fast as possible. The 
 
 To take adavantage of all the CLI features you need a thread-safe version of **PHP** also called **ZTS** with **Parallel** extension. It is not mandatory but recommended to enable **ZTS** in the **PHP** engine. Otherwise you can compile pages dynamically by calling your application in the browser.
 
-To eneble ZTS see this [section](enable-zts).
+To enable ZTS see this [section](enable-zts).
 
 ## Install the framework
 
@@ -120,8 +120,8 @@ but yarn has some shortcuts too:
 
 **Ephect** framework is in work in progress stage. This means that there's a lot to do. Breaking changes are yet to come.
 
-<sup>1</sup> The concept of hooks in **ReactJS** is explained at [ReactJS hooks reference](https://reactjs.org/docs/hooks-reference.html)
+<sup>1</sup> The concept of hooks in **ReactJS** is explained at [ReactJS hooks reference](https://reactjs.org/docs/hooks-reference.html).
 
-<sup>2</sup> The concept of slots in **WebComponents** is explained at [MDN -  The Web Component Slot element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot)
+<sup>2</sup> The concept of slots in **WebComponents** is explained at [MDN -  The Web Component Slot element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).
 
 Happy coding again! :)
