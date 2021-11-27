@@ -38,7 +38,7 @@ Once the pages are prepared in cache, browsing them is as fast as possible. The 
 
 To take benefits of all the CLI features you need a thread-safe version of PHP also called ZTS with Parallel extension. It is not mandatory but recommended to enable ZTS in PHP engine. Otherwise you can compile pages dynamically by calling your application in the browser just as other frameworks do.
 
-To eneble ZTS see this [section](docs/enable-zts)
+To eneble ZTS see this [section](enable-zts).
 
 ## Install the framework
 
