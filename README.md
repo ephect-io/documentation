@@ -31,10 +31,10 @@ namespace QuickStart;
 
 function MyComponent($children) {
 
-    return (<<<HTML
+    return (<<< HTML
     <h1>My component</h1>
     <p>
-    \{\{ children \}\}
+    {{ children }}
     </p>
     HTML);
 }
