@@ -12,7 +12,7 @@ Basically, components are custom HTML tags. All concepts of HTML tags on backend
 
 The logic of the component is coded in a simple funcion returning a template.
 
-### Example 1
+#### Example 1
 
 Here is an open component that can surround children components or just HTML code.
 
@@ -27,11 +27,11 @@ The code would look like this:
 ```php
 <?php
 
-namespace Fun;
+namespace QuickStart;
 
 function MyComponent($children) {
 
-    return (<<< HTML
+    return (<<<HTML
     <h1>My component</h1>
     <p>
     {{ children }}
@@ -40,7 +40,7 @@ function MyComponent($children) {
 }
 ```
 
-It will display:
+It will render:
 
 ```html
     <h1>My component</h1>
@@ -49,7 +49,7 @@ It will display:
     </p>
 ```
 
-### Example 2
+#### Example 2
 
 A closed component to which we pass arguments:
 
@@ -62,7 +62,7 @@ The code would look like this:
 ```php
 <?php
 
-namespace Fun;
+namespace QuickStart;
 
 function AnotherComponent($props) {
 
@@ -74,7 +74,7 @@ function AnotherComponent($props) {
 }
 ```
 
-It will display:
+It will render:
 
 ```html
     <h2 id="with">
@@ -93,7 +93,7 @@ If we combine examples 1 and 2:
 </MyComponent>
 ```
 
-It will display:
+It will render:
 
 ```html
     <h1>My component</h1>
@@ -110,10 +110,10 @@ A parent component with named placeholders can be inherited to change the conten
 
 Here is a Mother component containing slots to be overriden:
 
-```html
+```php
 <?php
 
-namespace Fun;
+namespace QuickStart;
 
 function Mother($children)
 {
@@ -147,10 +147,10 @@ function Mother($children)
 
 And here is a component inheriting from Mother component:
 
-```html
+```php
 <?php
 
-namespace Fun;
+namespace QuickStart;
 
 function Home()
 {
@@ -176,7 +176,7 @@ function Home()
 }
 ```
 
-It will display: 
+It will render: 
 
 ```html
     <!DOCTYPE html>
