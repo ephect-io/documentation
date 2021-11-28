@@ -34,7 +34,7 @@ function MyComponent($children) {
     return (<<<HTML
     <h1>My component</h1>
     <p>
-    {{ children }}
+    \{\{ children \}\}
     </p>
     HTML);
 }
@@ -135,7 +135,7 @@ function Mother($children)
 
         <body>
             <div class="App" >
-                {{ children }}
+                \{\{ children \}\}
             </div>
             <Slot name="javascripts">
             </Slot>
