@@ -34,7 +34,9 @@ function MyComponent($children) {
     return (<<< HTML
     <h1>My component</h1>
     <p>
+    {% raw %}
     {{ children }}
+    {% endraw %}
     </p>
     HTML);
 }
@@ -68,7 +70,9 @@ function AnotherComponent($props) {
 
     return (<<<HTML
     <h2 id="with">
+        {% raw %}
         {{ props->with }}
+        {% endraw %}
     </h2>
     HTML);
 }
@@ -135,7 +139,9 @@ function Mother($children)
 
         <body>
             <div class="App" >
-                \{\{ children \}\}
+                {% raw %}
+                {{ children }}
+                {% endraw %}
             </div>
             <Slot name="javascripts">
             </Slot>
