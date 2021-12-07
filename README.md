@@ -135,7 +135,7 @@ function Mother($children)
 
         <body>
             <div class="App" >
-        {% raw %}{{ children }}{% endraw %}
+                {% raw %}{{ children }}{% endraw %}
             </div>
             <Slot name="javascripts">
             </Slot>
