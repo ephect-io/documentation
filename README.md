@@ -244,9 +244,9 @@ where *myproject* is the name of your project.
 
 Move to *myproject* directory and type:
 
-    php egg make:sample
+    php egg make:quickstart
 
-You will see a **src** directory in which you will find the standard structure of an ephect application. Ephect doesn't really care of the actual structure provided that it is under **src** directory. It means you can organize your application tree as you wish.
+You will see a **app** directory in which you will find the standard structure of an ephect application and a **public** directory in which is stored the index.php. Ephect doesn't really care of the actual project pstructure provided that all componenets are under **app** directory. It means you can organize your application tree as you wish.
 
 ## Pre-compile the application
 
