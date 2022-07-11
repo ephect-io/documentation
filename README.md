@@ -236,7 +236,7 @@ There's a dedicated project you can find here **[ephect-io/create-app](https://g
 
 Using Composer just do:
 
-    composer create-project ephect-io/create-app myproject
+    composer create-project ephect-io/create-app myproject dev-main
 
 where *myproject* is the name of your project. 
 
