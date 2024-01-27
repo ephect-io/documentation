@@ -2,7 +2,7 @@
 
 ## What is Ephect ?
 
-**E**phect is a **P**rogramming **H**ybrid **E**nvironment with **C**omponent-based **T**emplates. 
+**E**phect is a **P**rogramming **H**ybrid **E**nvironment with **C**omponent-based **T**emplates.
 
 It's a comprehensive solution that combines a lightweight PHP framework and a JavaScript library.
 
@@ -14,7 +14,7 @@ It integrates a build process based on webpack.
 
 ### The components
 
-Basically, components are custom HTML tags. All concepts of HTML tags on backend side are applicable to components except the naming convention: a component name must begin with a capital letter. 
+Basically, components are custom HTML tags. All concepts of HTML tags on backend side are applicable to components except the naming convention: a component name must begin with a capital letter.
 
 The logic of the component is coded in a simple funcion returning a template.
 
@@ -40,7 +40,7 @@ function MyComponent($children) {
     return (<<< HTML
     <h1>My component</h1>
     <p>
-    {% raw %}{{ children }}{% endraw %}
+    {{ children }}
     </p>
     HTML);
 }
@@ -50,9 +50,9 @@ It will render:
 
 ```html
     <h1>My component</h1>
-    <p>
+<p>
     Hello World!
-    </p>
+</p>
 ```
 
 #### Example 2
@@ -74,7 +74,7 @@ function AnotherComponent($props) {
 
     return (<<<HTML
     <h2 id="with">
-        {% raw %}{{ props->with }}{% endraw %}
+        {{ props->with }}
     </h2>
     HTML);
 }
@@ -85,7 +85,7 @@ It will render:
 ```html
     <h2 id="with">
     Some argument
-    </h2>
+</h2>
 ```
 ### Cascading and reusing components
 
@@ -103,11 +103,11 @@ It will render:
 
 ```html
     <h1>My component</h1>
-    <p>
-    <h2 id="with">
-        Some argument
-    </h2>
-    </p>
+<p>
+<h2 id="with">
+    Some argument
+</h2>
+</p>
 ```
 
 ## The component Slot
@@ -141,7 +141,7 @@ function Mother($children)
 
         <body>
             <div class="App" >
-                {% raw %}{{ children }}{% endraw %}
+                {{ children }}
             </div>
             <Slot name="javascripts">
             </Slot>
@@ -182,29 +182,29 @@ function Home()
 }
 ```
 
-It will render: 
+It will render:
 
 ```html
     <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="UTF-8">
-            <title>
-                Ephect in action !
-            </title>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Ephect in action !
+    </title>
 
-            <link rel="stylesheet" href="/css/app.css" />
-        </head>
+    <link rel="stylesheet" href="/css/app.css" />
+</head>
 
-        <body>
-            <div class="App">
-                <div class="App-content">
-                    <h1>Welcome Home!</h1>
-                </div>
-            </div>
-            <script src="/js/ephect.js"></script>
-        </body>
-    </html>
+<body>
+<div class="App">
+    <div class="App-content">
+        <h1>Welcome Home!</h1>
+    </div>
+</div>
+<script src="/js/ephect.js"></script>
+</body>
+</html>
 ```
 
 
@@ -218,7 +218,7 @@ It will render:
 
 ## CLI tool *egg*
 
-**Ephect** comes with a CLI tool called *egg*. The main feature of **egg** is to pre-compile the code of the whole application at once. This is done in one command: *php egg compile*. The benefits of this approach are the errors management and the increase of velocity of the application.
+**Ephect** comes with a CLI tool called *egg*. The main feature of **egg** is to build the code of the whole application at once. This is done in one command: *php egg build*. The benefits of this approach are the errors management and the increase of velocity of the application.
 
 ### Error handling
 
@@ -226,7 +226,7 @@ Every syntax error is handled as a fatal error which stops the compilation proce
 
 ### Headless page generator
 
-The compiler parses the templates of every component owned by a page comprising the cascading components. Each component is translated from **Ephect** template code to pure functional **PHP** code and cached. The code of each component is light and fast to run. 
+The compiler parses the templates of every component owned by a page comprising the cascading components. Each component is translated from **Ephect** template code to pure functional **PHP** code and cached. The code of each component is light and fast to run.
 
 Once the pages are prepared in cache, browsing them is as fast as possible. The only bottleneck that you should be aware of is the data resources calls.
 
@@ -240,13 +240,13 @@ You may also need to install some PHP extensions, if it's not done yes, like PDO
 
 It's recommended to use the composer create-project command in order to get all the needed stuff.
 
-There's a dedicated project you can find here **[ephect-io/create-app](https://github.com/ephect-io/create-app)** that will help you for a quick start. 
+There's a dedicated project you can find here **[ephect-io/create-app](https://github.com/ephect-io/create-app)** that will help you for a quick start.
 
 Just do:
 
     composer create-project ephect-io/create-app myproject
 
-where *myproject* is the name of your project. 
+where *myproject* is the name of your project.
 
 ## Install the sample application
 
@@ -254,7 +254,7 @@ Move to *myproject* directory and type:
 
     php egg make:quickstart
 
-You will see a **app** directory in which you will find the standard structure of an ephect application and a **public** directory in which is stored the index.php. Ephect doesn't really care of the actual project pstructure provided that all componenets are under **app** directory. It means you can organize your application tree as you wish.
+You will see a **app** directory in which you will find the standard structure of an Ephect application and a **public** directory in which is stored the index.php.
 
 ## Build the application
 
@@ -264,11 +264,15 @@ If no issue is popping up on the console then you can generate your application 
 
 However, you first need to launch the embedded web server.
 
-If you're under Windows, you need to type this:
+If you're running Windows, you need to type this:
 
     php -S localhost:8888 -t src/public
 
 otherwise, MacOS and Linux accept this syntax:
+
+    php egg serve
+
+Open another terminal or another tab in your terminal and type:
 
     php egg build
 
@@ -284,9 +288,9 @@ If you installed the QuickStart application as said previously, you should see s
 
 You will find the generated application in the directory *cache*.
 
-The build process follows the routes with GET HTTP method, all other methods routes are build on web browser call.
+The build process follows the routes with GET HTTP method, all other methods routes are built on web browser call.
 
-### Using the hybrid context: PHP + JavaScript 
+### Using the hybrid context: PHP + JavaScript
 
 First, ensure NodeJS is installed and running with version 20 as a miminum. LTS/Iron is a good choice.
 
@@ -321,7 +325,7 @@ If you installed the QuickStart application as said previously, you should see s
     Compiling Info, querying http://localhost:8000/info ... 009ms
     Compiling Callback, querying http://localhost:8000/callback ... 069ms
 
-## The sample pages 
+## The sample pages
 
 The available page routes are:
 
@@ -342,3 +346,6 @@ A sample to show PHP info
 
 A sample to show how to make a JavaScript callback with a PHP JSON response.
 - http://localhost:8000/callback
+
+
+## To be continued...
